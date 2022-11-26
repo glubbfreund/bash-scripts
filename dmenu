@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+dmenu_run -fn 'UbuntuMono Nerd Font-9' -Y 5 -X 375 -h 26 -W 1165 -g 3 -l 20 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'

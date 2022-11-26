@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+
+polybar-msg cmd quit
+polybar -c=~/.config/i3/polybar.ini mypolybar 2>&1 | tee -a /tmp/polybar1.log & disown
+echo "Bars launched..."

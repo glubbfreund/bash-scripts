@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -Y 5 -X 375 -h 26 -W 1165 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+
+declare -a options=(
+    "shutdown"
+    "logoff"
+    "reboot"
+    "suspend"
+    "abort"
+)
+
+choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'Power Menu:')
+
+if [[ "$choice" == "abort" ]]; then
+    exit 0
+elif [[ "$choice" == "shutdown" ]]; then
+    systemctl poweroff
+elif [[ "$choice" == "reboot" ]]; then
+    systemctl reboot
+elif [[ "$choice" == "logoff" ]]; then
+    i3-msg exit
+elif [[ "$choice" == "suspend" ]]; then
+    systemctl suspend 
+else
+    exit 1
+fi
+
+
+
