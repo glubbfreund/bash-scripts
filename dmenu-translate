@@ -1,9 +1,9 @@
 #!/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -Y 5 -X 375 -h 26 -W 1165 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 10 -Y 5 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
 
 echo_err() {
-	notify-send -u critical "$0 error" "$1"
+	dunstify -u critical "$0 error" "$1"
 }
 
 err() {
@@ -19,7 +19,7 @@ check_dep() {
 # may want to replace it via DMENU vars
 check_dep trans https://github.com/soimort/translate-shell
 check_dep xclip https://github.com/astrand/xclip
-check_dep notify-send
+#check_dep notify-send
 
 load_config() {
 	config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/dmenu-translate"
@@ -152,4 +152,4 @@ esac
 
 echo "$output" | eval "$CLIP_CMD" || err 'Failed to copy! Is CLIP_CMD setting set properly?'
 
-notify-send 'dmenu-translate' 'Translation copied to clipboard!'
+dunstify -i emoji-flags-symbolic.symbolic 'dmenu-translate' 'Translation copied to clipboard!'
