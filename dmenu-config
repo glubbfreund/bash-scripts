@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 10 -Y 5 -X 500 -h 26 -W 900 -l 10 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 5 -X 500 -h 26 -W 900 -l 10 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
 term="alacritty"
 [[ "$EDITOR" ]] || $EDITOR=vim
 
@@ -18,4 +18,4 @@ declare -a options=(
 choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'config')
 [[ "$choice" == "abort" ]] && echo "Config dmenu: ok, aborting." && exit 0
 cfgfile=$(printf '%s\n' "${choice}" | awk '{print $NF}')
-echo "Config dmenu: opening $term -e $EDITOR $cfgfile " && $term -e $EDITOR "$cfgfile" || echo "Config dmenu: nothing? quitting!" && exit 1
+[[ "$choice" ]] && echo "Config dmenu: opening $term -e $EDITOR $cfgfile " && $term -e $EDITOR "$cfgfile" || echo "Config dmenu: nothing? quitting!" && exit 1

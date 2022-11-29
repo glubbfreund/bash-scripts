@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 10 -Y 5 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 85 -Y 5 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
 
 declare -a options=(
     "shutdown"
