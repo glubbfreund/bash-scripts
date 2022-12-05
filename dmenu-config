@@ -1,15 +1,15 @@
 #!/usr/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 5 -X 500 -h 26 -W 900 -l 10 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -l 10 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
 term="alacritty"
 [[ "$EDITOR" ]] || EDITOR=nvim
 
 declare -a options=(
     "i3 - $HOME/.config/i3/config"
     "nvim - $HOME/.config/nvim"
-    "polybar - $HOME/.config/i3/polybar.ini"
+    "polybar - $HOME/.config/polybar/polybar.ini"
     "dunst - $HOME/.config/dunst/dunstrc"
-    "picom - $HOME/.config/i3/picom.conf"
+    "picom - $HOME/.config/picom/picom.conf"
     "scripts - $HOME/dev/bash"
     "alacritty - $HOME/.config/alacritty/alacritty.yml"
     "fish - $HOME/.config/fish"
