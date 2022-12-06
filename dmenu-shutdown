@@ -21,7 +21,7 @@ elif [[ "$choice" == "reboot" ]]; then
 elif [[ "$choice" == "logoff" ]]; then
     i3-msg exit
 elif [[ "$choice" == "lock" ]]; then
-    i3lock-fancy -f 'UbuntuMono Nerd Font'  
+    ~/dev/bash/blurlock
 elif [[ "$choice" == "suspend" ]]; then
     systemctl suspend 
 else
