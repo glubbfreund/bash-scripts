@@ -7,5 +7,5 @@ else
   then 
     echo "" 
   fi
-  echo "" 
+  echo "%{F#72E6CC}" 
 fi
