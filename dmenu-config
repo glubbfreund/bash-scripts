@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -l 10 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
 term="alacritty"
 [[ "$EDITOR" ]] || EDITOR=nvim
 
@@ -15,7 +15,16 @@ declare -a options=(
     "fish - $HOME/.config/fish"
     "abort"
 )
-choice=$(printf '%s\n' "${options[@]}" | dmenu -i -p 'config')
+choice=$(printf '%s\n' "${options[@]}" | awk -F- '{print $1}' | tr -d ' ' | dmenu -i -p 'config')
 [[ "$choice" == "abort" ]] && echo "Config dmenu: ok, aborting." && exit 0
+
+for i in "${options[@]}"
+do
+   : 
+   if [[ $(printf '%s\n' "$i" | awk -F- '{print $1}' | tr -d ' ') == "$choice" ]]; then
+       choice=$i
+   fi
+done
+
 cfgfile=$(printf '%s\n' "${choice}" | awk '{print $NF}')
 [[ "$choice" ]] && echo "Config dmenu: opening $term -e $EDITOR $cfgfile " && $term -e $EDITOR "$cfgfile" || echo "Config dmenu: nothing? quitting!" && exit 1
