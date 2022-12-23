@@ -1,6 +1,6 @@
 #!/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -nb '#101010' -nf '#C5C8C6' -sf '#101010' -sb '#72E6CC' -nhb '#101010' -nhf '#72E6CC' -shb '#72E6CC' -shf '#101010'"
 
 echo_err() {
 	dunstify -u critical "$0 error" "$1"
@@ -28,7 +28,7 @@ load_config() {
 	config_file="$config_dir/config.conf"
 	[ -f "$config_file" ] || cat > "$config_file" <<-EOF
 		# Languages that appear in the menu
-		TRANS_LANGS='de el'
+		TRANS_LANGS='de el en'
 
 		# You can change the following settings to replace dmenu
 		# with a different utility or set your options

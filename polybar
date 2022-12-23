@@ -1,5 +1,11 @@
 #!/usr/bin/sh
 
 polybar-msg cmd quit
-polybar -c=~/.config/polybar/polybar.ini mypolybar 2>&1 | tee -a /tmp/polybar1.log & disown
+if type "xrandr"; then
+    for m in $(polybar --list-monitors | cut -d":" -f1); do
+        MONITOR=$m polybar -c=~/.config/polybar/polybar.ini mypolybar &
+    done
+else
+    polybar -c=~/.config/polybar/polybar.ini mypolybar &
+fi
 echo "Bars launched..."

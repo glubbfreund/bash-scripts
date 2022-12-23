@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
-alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 25 -Y 0 -X 500 -h 26 -W 900 -nb '#282A2E' -nf '#C5C8C6' -sf '#282A2E' -sb '#72E6CC' -nhb '#282A2E' -nhf '#72E6CC' -shb '#72E6CC' -shf '#282A2E'"
-term="alacritty"
+alias dmenu="dmenu -fn 'UbuntuMono Nerd Font-9' -o 90 -Y 0 -X 500 -h 26 -W 900 -nb '#101010' -nf '#C5C8C6' -sf '#101010' -sb '#72E6CC' -nhb '#101010' -nhf '#72E6CC' -shb '#72E6CC' -shf '#101010'"
+term="kitty"
 [[ "$EDITOR" ]] || EDITOR=nvim
 
 declare -a options=(
@@ -11,7 +11,8 @@ declare -a options=(
     "dunst - $HOME/.config/dunst/dunstrc"
     "picom - $HOME/.config/picom/picom.conf"
     "scripts - $HOME/dev/bash"
-    "alacritty - $HOME/.config/alacritty/alacritty.yml"
+    "ranger - $HOME/.config/ranger"
+    "kitty - $HOME/.config/kitty/kitty.conf"
     "fish - $HOME/.config/fish"
     "abort"
 )
